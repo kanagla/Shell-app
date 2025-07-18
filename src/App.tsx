@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, Suspense } from "react";
 
-function App() {
+const CartPage = React.lazy(() => import("ordersApp/CartPage"));
+
+export default function App() {
+  const user = {
+    name: "Surya",
+    role: "admin",
+  };
+
+useEffect(() => {
+  const iframe = document.getElementById("bookstore-iframe") as HTMLIFrameElement;
+  if (!iframe) return;
+  iframe.addEventListener("load", () => {
+    console.log("✅ iframe loaded, sending message");
+    setTimeout(() => {
+      iframe.contentWindow?.postMessage(
+        {
+          type: "SET_USER",
+          payload: {
+            name: "Surya",
+            role: "admin",
+          },
+        },
+        "http://localhost:3000"
+      );
+    }, 500); 
+  });
+}, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Shell App</h1>
+
+      <Suspense fallback={<div>Loading Cart Page...</div>}>
+        <CartPage />
+      </Suspense>
+
+      <h2>📦 Loaded from Bookstore App (via iframe)</h2>
+
     </div>
   );
 }
 
-export default App;
