@@ -50,7 +50,7 @@ jobs:
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: shell-app/ecs-task-shell.json
+          task-definition: ecs-task-shell.json
           service: shell-service
           cluster: shell-cluster
           wait-for-service-stability: true
