@@ -19,7 +19,9 @@
     "build": "webpack --config webpack.config.js",
     "test": "react-scripts jest",
     "eject": "react-scripts eject",
-    "prebuild": "node generate-version.js"
+    "prebuild": "node generate-version.js",
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -50,12 +52,16 @@
     "@types/node": "^24.0.14",
     "babel-jest": "^30.0.4",
     "babel-loader": "^10.0.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react": "^7.37.5",
     "html-webpack-plugin": "^5.6.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^30.0.4",
     "jest-environment-jsdom": "^30.0.4",
     "jest-fetch-mock": "^3.0.3",
     "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
     "ts-jest": "^29.4.0",
     "webpack": "^5.100.1",
     "webpack-cli": "^6.0.1",

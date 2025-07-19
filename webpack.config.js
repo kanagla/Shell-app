@@ -35,32 +35,6 @@ module.exports = {
     ],
   },
   plugins: [
-//     new ModuleFederationPlugin({
-//       name: "shellApp",
-//        filename: "remoteEntry.js",
-//       remotes: {
-//         ordersApp: "ordersApp@http://localhost:3002/remoteEntry.js",
-//       },
-//         shared: {
-//     react: { singleton: true, requiredVersion: '^19.0.0', eager: false },
-//     'react-dom': { singleton: true, requiredVersion: '^19.0.0', eager: false },
-//   },
-//    exposes: {
-//     "./shared/store": "./src/shared/store.ts", // ✅ Correct path
-//   },
-
-// shared: {
-//   react: {
-//     singleton: true,
-//     requiredVersion: deps.react,
-//   },
-//   "react-dom": {
-//     singleton: true,
-//     requiredVersion: deps["react-dom"],  
-//   },
-// //  zustand: { singleton: true },
-// }
-//     }),
 new ModuleFederationPlugin({
       name: 'shellApp',
       remotes: {
