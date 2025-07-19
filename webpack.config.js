@@ -8,16 +8,16 @@ module.exports = {
   entry: "./src/index.tsx",
   mode: "development",
   devServer: {
-  port: 3001,
-  historyApiFallback: true,
-  client: {
-    overlay: false, // 👈 Disable error overlay to see raw browser error
+    port: 3001,
+    host: '0.0.0.0', // 🔥 Required for ECS/ALB access
+    historyApiFallback: true,
+    client: {
+      overlay: false, // 👈 Disable error overlay to see raw browser error
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "*", // 👈 Allow remote modules to load
+    },
   },
-  headers: {
-    "Access-Control-Allow-Origin": "*", // 👈 Allow remote modules to load
-  },
-},
-
   output: {
     publicPath: "/",
     clean: true,
@@ -35,7 +35,7 @@ module.exports = {
     ],
   },
   plugins: [
-new ModuleFederationPlugin({
+    new ModuleFederationPlugin({
       name: 'shellApp',
       remotes: {
         ordersApp: 'ordersApp@http://localhost:3002/remoteEntry.js',
@@ -53,8 +53,8 @@ new ModuleFederationPlugin({
         },
         zustand: { singleton: true },
       },
-    }),    
-new HtmlWebpackPlugin({
+    }),
+    new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
   ],

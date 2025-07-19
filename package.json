@@ -21,7 +21,8 @@
     "eject": "react-scripts eject",
     "prebuild": "node generate-version.js",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "serve:prod": "serve -s dist"
   },
   "eslintConfig": {
     "extends": [
@@ -65,7 +66,8 @@
     "ts-jest": "^29.4.0",
     "webpack": "^5.100.1",
     "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-dev-server": "^5.2.2",
+    "serve": "^14.2.0"
   },
   "include": [
     "src",
