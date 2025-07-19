@@ -3,7 +3,6 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 
-// Example mock with display name
 jest.mock('ordersApp/CartPage', () => {
   const MockCartPage = () => <div>Mock Cart Page</div>;
   MockCartPage.displayName = 'MockCartPage';
