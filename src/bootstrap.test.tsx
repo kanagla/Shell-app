@@ -1,5 +1,4 @@
-import { act } from "react";
-import { loadBookstoreApp, loadOrdersApp } from "./bootstrap";
+import { loadBookstoreApp} from "./bootstrap";
 
 global.fetch = jest.fn().mockResolvedValue({
   json: () => Promise.resolve({
@@ -10,7 +9,7 @@ global.fetch = jest.fn().mockResolvedValue({
 
 
 describe('Shell App Bootstrap', () => {
-  beforeEach(() => {
+  beforeEach(() => {``
     jest.clearAllMocks();
     document.body.innerHTML = `
       <div id="orders-root"></div>

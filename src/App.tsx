@@ -3,10 +3,6 @@ import React, { useEffect, Suspense } from "react";
 const CartPage = React.lazy(() => import("ordersApp/CartPage"));
 
 export default function App() {
-  const user = {
-    name: "Surya",
-    role: "admin",
-  };
 
 useEffect(() => {
   const iframe = document.getElementById("bookstore-iframe") as HTMLIFrameElement;
