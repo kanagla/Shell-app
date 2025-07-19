@@ -24,7 +24,6 @@ useEffect(() => {
   });
 }, []);
 
-
   return (
     <div>
       <h1>Shell App</h1>
