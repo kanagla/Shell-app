@@ -11,10 +11,6 @@ jobs:
     name: Build & Deploy Shell App
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: shell-app
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -43,30 +39,18 @@ jobs:
       - name: Log in to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Set ECR Registry URL
-        id: ecr
-        run: |
-          echo "ECR_REGISTRY=$(aws sts get-caller-identity --query 'Account' --output text).dkr.ecr.ap-south-1.amazonaws.com" >> $GITHUB_ENV
-
       - name: Build & Push Docker Image
         env:
+          ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
           ECR_REPOSITORY: shell-app
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
-      - name: Register ECS Task Definition
-        id: register-task
-        uses: aws-actions/amazon-ecs-render-task-definition@v1
-        with:
-          task-definition: ecs-task-shell.json
-          container-name: shell-app
-          image: ${{ env.ECR_REGISTRY }}/shell-app:latest
-
       - name: Deploy to ECS
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: ${{ steps.register-task.outputs.task-definition }}
+          task-definition: ecs-task-shell.json
           service: shell-service
           cluster: shell-cluster
           wait-for-service-stability: true
