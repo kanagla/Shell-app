@@ -7,7 +7,7 @@
   "executionRoleArn": "arn:aws:iam::944777361642:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "shell-app-container",
+      "name": "shell-container",
       "image": "944777361642.dkr.ecr.ap-south-1.amazonaws.com/shell-app:latest",
       "essential": true,
       "portMappings": [
