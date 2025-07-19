@@ -51,6 +51,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ecs-task-shell.json
-          service: shell-service
+          service: shell-task-def-service-trrqb7eh
           cluster: shell-cluster
           wait-for-service-stability: true
