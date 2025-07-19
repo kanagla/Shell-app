@@ -9,7 +9,7 @@ global.fetch = jest.fn().mockResolvedValue({
 
 
 describe('Shell App Bootstrap', () => {
-  beforeEach(() => {``
+  beforeEach(() => {
     jest.clearAllMocks();
     document.body.innerHTML = `
       <div id="orders-root"></div>
