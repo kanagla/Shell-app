@@ -25,7 +25,10 @@ function loadRemoteEntry(remoteUrl: string, scope: string): Promise<void> {
 // Load Orders app (Module Federation)
 async function loadOrdersApp() {
   try {
-    const manifestRes = await fetch('/manifest.json');
+   const manifestRes = await fetch('/manifest.json');
+    if (!manifestRes.ok) {
+      throw new Error(`Failed to load manifest: ${manifestRes.status}`);
+    }
     const manifest = await manifestRes.json();
     const remoteUrl = manifest.orders.remoteEntry;
 

@@ -1,10 +1,5 @@
 {
-  "bookstore": {
-    "version": "1.0.0",
-    "url": "http://localhost:3000/dashboard"
-  },
   "orders": {
-    "version": "1.0.0",
     "remoteEntry": "/microfrontends/orders/1.0.0/remoteEntry.js"
   }
 }

@@ -1,18 +1,18 @@
-name: Deploy Shell App
+name: Build & Deploy Shell App with Remote
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
     branches: [ "main" ]
 
 jobs:
   deploy-shell:
-    name: Build & Deploy Shell App
+    name: Build & Deploy Shell App with Remote
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Repo
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -20,15 +20,28 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
+      # --- ORDERS APP BUILD ---
+      - name: Install Orders App Dependencies
+        working-directory: ./orders-app
         run: npm ci
 
-      - name: Run Lint (Ignore Warnings)
-        run: npm run lint || true
-
-      - name: Build Shell App
+      - name: Build Orders App
+        working-directory: ./orders-app
         run: npm run build
 
+      # ✅ This runs the postbuild script to copy files to shell-app/public/...
+      # No extra step needed if you already added the postbuild script
+
+      # --- SHELL APP BUILD ---
+      - name: Install Shell App Dependencies
+        working-directory: ./shell-app
+        run: npm ci
+
+      - name: Build Shell App
+        working-directory: ./shell-app
+        run: npm run build
+
+      # --- AWS DEPLOY ---
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
@@ -39,7 +52,8 @@ jobs:
       - name: Log in to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Build & Push Docker Image
+      - name: Build & Push Docker Image to ECR
+        working-directory: ./shell-app
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
           ECR_REPOSITORY: shell-app

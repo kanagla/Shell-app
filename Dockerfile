@@ -1,11 +1,26 @@
-FROM node:18
+# Step 1: Build React App
+FROM node:20 AS builder
 
 WORKDIR /app
-COPY . .
 
-RUN npm install
+COPY package.json package-lock.json ./
+RUN npm ci
+
+COPY . .
 RUN npm run build
 
-EXPOSE 3001
+# Step 2: Serve with Nginx
+FROM nginx:alpine
 
-CMD ["npm", "start"]
+# Copy custom Nginx config if needed (optional)
+# COPY nginx.conf /etc/nginx/nginx.conf
+
+# Remove default static files and copy built app
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,21 +1,28 @@
-// shell-app/webpack.config.js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const path = require("path");
 const deps = require("./package.json").dependencies;
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.tsx",
-  mode: "development",
+  mode: "development", // ✅ USE dev mode for local server
   devServer: {
     port: 3001,
-    host: '0.0.0.0', // 🔥 Required for ECS/ALB access
-    historyApiFallback: true,
-    client: {
-      overlay: false, // 👈 Disable error overlay to see raw browser error
+    host: '0.0.0.0',
+    static: {
+      directory: path.resolve(__dirname, 'public'),
+      publicPath: '/',
+    },
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/$/, to: '/index.html' },
+        { from: /^\/dashboard/, to: '/index.html' },
+      ],
+      disableDotRule: true,
     },
     headers: {
-      "Access-Control-Allow-Origin": "*", // 👈 Allow remote modules to load
+      'Access-Control-Allow-Origin': '*',
     },
   },
   output: {
@@ -38,24 +45,21 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'shellApp',
       remotes: {
-        ordersApp: 'ordersApp@http://localhost:3002/remoteEntry.js',
+        ordersApp: 'ordersApp@/microfrontends/orders/1.0.0/remoteEntry.js',
       },
       shared: {
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-          eager: false,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-          eager: false,
-        },
+        react: { singleton: true, requiredVersion: deps.react },
+        "react-dom": { singleton: true, requiredVersion: deps["react-dom"] },
         zustand: { singleton: true },
       },
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "manifest.json", to: "manifest.json" }
+      ],
     }),
   ],
 };
