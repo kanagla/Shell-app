@@ -20,15 +20,6 @@ jobs:
         with:
           node-version: '20'
 
-      # --- ORDERS APP BUILD ---
-      - name: Install Orders App Dependencies
-        working-directory: ./orders-app
-        run: npm ci
-
-      - name: Build Orders App
-        working-directory: ./orders-app
-        run: npm run build
-
       # ✅ This runs the postbuild script to copy files to shell-app/public/...
       # No extra step needed if you already added the postbuild script
 
