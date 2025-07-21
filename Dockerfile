@@ -20,7 +20,7 @@ RUN rm -rf /usr/share/nginx/html/*
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Expose port that nginx.conf listens on
-EXPOSE 80
+EXPOSE 3001
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
