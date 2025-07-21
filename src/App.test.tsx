@@ -3,8 +3,11 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import App from './App';
 
-// Mock React.lazy imported component
-jest.mock('ordersApp/CartPage', () => () => <div>Served from orders-app via Module Federation.</div>);
+jest.mock('ordersApp/CartPage', () => {
+  const MockCartPage = () => <div>Mock Cart Page</div>;
+  MockCartPage.displayName = 'MockCartPage';
+  return MockCartPage;
+});
 
 describe('App.tsx', () => {
   beforeEach(() => {
@@ -19,7 +22,7 @@ describe('App.tsx', () => {
     expect(screen.getByText('📦 Loaded from Bookstore App (via iframe)')).toBeInTheDocument();
 
     // Wait for lazy loaded component
-    await waitFor(() => expect(screen.getByText('Served from orders-app via Module Federation.')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Mock Cart Page')).toBeInTheDocument());
   });
 
   it('sends postMessage to iframe on load', async () => {

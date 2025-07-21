@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkorders_app=self.webpackChunkorders_app||[]).push([[482],{482:(e,r,a)=>{a.r(r),a.d(r,{default:()=>t});var l=a(212),n=a.n(l);const t=()=>n().createElement("div",null,n().createElement("h2",null,"🧾 Cart Page (Orders Micro-Frontend)"),n().createElement("p",null,"Served from orders-app via Module Federation."))}}]);

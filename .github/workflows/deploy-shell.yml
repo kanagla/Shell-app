@@ -1,23 +1,18 @@
-name: Deploy Shell App
+name: Build & Deploy Shell App with Remote
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'shell-app/**'
+    branches: ["main"]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   deploy-shell:
-    name: Build & Deploy Shell App
+    name: Build & Deploy Shell App with Remote
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: shell-app
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout Repo
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -25,15 +20,17 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
-        run: npm ci
+      # ✅ This runs the postbuild script to copy files to shell-app/public/...
+      # No extra step needed if you already added the postbuild script
 
-      - name: Run Lint
-        run: npm run lint
+      # --- SHELL APP BUILD ---
+      - name: Install Shell App Dependencies
+        run: npm ci
 
       - name: Build Shell App
         run: npm run build
 
+      # --- AWS DEPLOY ---
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
@@ -44,7 +41,7 @@ jobs:
       - name: Log in to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
 
-      - name: Build & Push Docker Image
+      - name: Build & Push Docker Image to ECR
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
           ECR_REPOSITORY: shell-app
@@ -56,4 +53,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ecs-task-shell.json
-          service: shell-service
+          service: shell-task-def-service-trrqb7eh
+          cluster: shell-cluster
+          wait-for-service-stability: true

@@ -39,3 +39,7 @@ docker-compose.override.yml
 # Misc
 *.tgz
 *.swp
+
+#version.json
+version.json
+

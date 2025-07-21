@@ -1,5 +1,4 @@
-import { act } from "react";
-import { loadBookstoreApp, loadOrdersApp } from "./bootstrap";
+import { loadBookstoreApp} from "./bootstrap";
 
 global.fetch = jest.fn().mockResolvedValue({
   json: () => Promise.resolve({
