@@ -45,7 +45,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'shellApp',
       remotes: {
-        ordersApp: 'ordersApp@/microfrontends/orders/1.0.0/remoteEntry.js',
+        ordersApp: 'ordersApp@/http://orders-app-alb-1955864620.ap-south-1.elb.amazonaws.com/remoteEntry.js',
       },
       shared: {
         react: { singleton: true, requiredVersion: deps.react },
