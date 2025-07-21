@@ -25,11 +25,9 @@ jobs:
 
       # --- SHELL APP BUILD ---
       - name: Install Shell App Dependencies
-        working-directory: ./shell-app
         run: npm ci
 
       - name: Build Shell App
-        working-directory: ./shell-app
         run: npm run build
 
       # --- AWS DEPLOY ---
@@ -44,7 +42,6 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build & Push Docker Image to ECR
-        working-directory: ./shell-app
         env:
           ECR_REGISTRY: ${{ secrets.ECR_REGISTRY }}
           ECR_REPOSITORY: shell-app
