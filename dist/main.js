@@ -1,1 +1,550 @@
-(()=>{var e,r,t,n,o={513:(e,r,t)=>{Promise.all([t.e(338),t.e(212),t.e(328)]).then(t.bind(t,751))}},a={};function u(e){var r=a[e];if(void 0!==r)return r.exports;var t=a[e]={exports:{}};return o[e](t,t.exports,u),t.exports}u.m=o,u.c=a,u.n=e=>{var r=e&&e.__esModule?()=>e.default:()=>e;return u.d(r,{a:r}),r},u.d=(e,r)=>{for(var t in r)u.o(r,t)&&!u.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:r[t]})},u.f={},u.e=e=>Promise.all(Object.keys(u.f).reduce((r,t)=>(u.f[t](e,r),r),[])),u.u=e=>e+".js",u.o=(e,r)=>Object.prototype.hasOwnProperty.call(e,r),e={},r="shell-app:",u.l=(t,n,o,a)=>{if(e[t])e[t].push(n);else{var i,l;if(void 0!==o)for(var f=document.getElementsByTagName("script"),s=0;s<f.length;s++){var p=f[s];if(p.getAttribute("src")==t||p.getAttribute("data-webpack")==r+o){i=p;break}}i||(l=!0,(i=document.createElement("script")).charset="utf-8",i.timeout=120,u.nc&&i.setAttribute("nonce",u.nc),i.setAttribute("data-webpack",r+o),i.src=t),e[t]=[n];var d=(r,n)=>{i.onerror=i.onload=null,clearTimeout(h);var o=e[t];if(delete e[t],i.parentNode&&i.parentNode.removeChild(i),o&&o.forEach(e=>e(n)),r)return r(n)},h=setTimeout(d.bind(null,void 0,{type:"timeout",target:i}),12e4);i.onerror=d.bind(null,i.onerror),i.onload=d.bind(null,i.onload),l&&document.head.appendChild(i)}},u.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t={},n={},u.f.remotes=(e,r)=>{u.o(t,e)&&t[e].forEach(e=>{var t=u.R;t||(t=[]);var o=n[e];if(!(t.indexOf(o)>=0)){if(t.push(o),o.p)return r.push(o.p);var a=r=>{r||(r=new Error("Container missing")),"string"==typeof r.message&&(r.message+='\nwhile loading "'+o[1]+'" from '+o[2]),u.m[e]=()=>{throw r},o.p=0},i=(e,t,n,u,i,l)=>{try{var f=e(t,n);if(!f||!f.then)return i(f,u,l);var s=f.then(e=>i(e,u),a);if(!l)return s;r.push(o.p=s)}catch(e){a(e)}},l=(e,r,n)=>i(r.get,o[1],t,0,f,n),f=r=>{o.p=1,u.m[e]=e=>{e.exports=r()}};i(u,o[2],0,0,(e,r,t)=>e?i(u.I,o[0],0,e,l,t):a(),1)}})},(()=>{u.S={};var e={},r={};u.I=(t,n)=>{n||(n=[]);var o=r[t];if(o||(o=r[t]={}),!(n.indexOf(o)>=0)){if(n.push(o),e[t])return e[t];u.o(u.S,t)||(u.S[t]={});var a=u.S[t],i="shell-app",l=(e,r,t,n)=>{var o=a[e]=a[e]||{},u=o[r];(!u||!u.loaded&&(!n!=!u.eager?n:i>u.from))&&(o[r]={get:t,from:i,eager:!!n})},f=[];return"default"===t&&(l("react-dom","19.1.0",()=>Promise.all([u.e(212),u.e(961)]).then(()=>()=>u(961))),l("react","19.1.0",()=>u.e(540).then(()=>()=>u(540)))),e[t]=f.length?Promise.all(f).then(()=>e[t]=1):1}}})(),u.p="/",(()=>{var e=e=>{var r=e=>e.split(".").map(e=>+e==e?+e:e),t=/^([^-+]+)?(?:-([^+]+))?(?:\+(.+))?$/.exec(e),n=t[1]?r(t[1]):[];return t[2]&&(n.length++,n.push.apply(n,r(t[2]))),t[3]&&(n.push([]),n.push.apply(n,r(t[3]))),n},r=e=>{var t=e[0],n="";if(1===e.length)return"*";if(t+.5){n+=0==t?">=":-1==t?"<":1==t?"^":2==t?"~":t>0?"=":"!=";for(var o=1,a=1;a<e.length;a++)o--,n+="u"==(typeof(i=e[a]))[0]?"-":(o>0?".":"")+(o=2,i);return n}var u=[];for(a=1;a<e.length;a++){var i=e[a];u.push(0===i?"not("+l()+")":1===i?"("+l()+" || "+l()+")":2===i?u.pop()+" "+u.pop():r(i))}return l();function l(){return u.pop().replace(/^\((.+)\)$/,"$1")}},t=(r,n)=>{if(0 in r){n=e(n);var o=r[0],a=o<0;a&&(o=-o-1);for(var u=0,i=1,l=!0;;i++,u++){var f,s,p=i<r.length?(typeof r[i])[0]:"";if(u>=n.length||"o"==(s=(typeof(f=n[u]))[0]))return!l||("u"==p?i>o&&!a:""==p!=a);if("u"==s){if(!l||"u"!=p)return!1}else if(l)if(p==s)if(i<=o){if(f!=r[i])return!1}else{if(a?f>r[i]:f<r[i])return!1;f!=r[i]&&(l=!1)}else if("s"!=p&&"n"!=p){if(a||i<=o)return!1;l=!1,i--}else{if(i<=o||s<p!=a)return!1;l=!1}else"s"!=p&&"n"!=p&&(l=!1,i--)}}var d=[],h=d.pop.bind(d);for(u=1;u<r.length;u++){var c=r[u];d.push(1==c?h()|h():2==c?h()&h():c?t(c,n):!h())}return!!h()},n=(r,t,n)=>{var o=n?(e=>Object.keys(e).reduce((r,t)=>(e[t].eager&&(r[t]=e[t]),r),{}))(r[t]):r[t];return Object.keys(o).reduce((r,t)=>!r||!o[r].loaded&&((r,t)=>{r=e(r),t=e(t);for(var n=0;;){if(n>=r.length)return n<t.length&&"u"!=(typeof t[n])[0];var o=r[n],a=(typeof o)[0];if(n>=t.length)return"u"==a;var u=t[n],i=(typeof u)[0];if(a!=i)return"o"==a&&"n"==i||"s"==i||"u"==a;if("o"!=a&&"u"!=a&&o!=u)return o<u;n++}})(r,t)?t:r,0)},o=(e,r,t)=>t?t():((e,r)=>(e=>{throw new Error(e)})("Shared module "+r+" doesn't exist in shared scope "+e))(e,r),a=(e=>function(r,t,n,o,a){var i=u.I(r);return i&&i.then&&!n?i.then(e.bind(e,r,u.S[r],t,!1,o,a)):e(r,u.S[r],t,n,o,a)})((e,a,i,l,f,s)=>{if(!((e,r)=>e&&u.o(e,r))(a,i))return o(e,i,s);var p,d,h=n(a,i,l);return t(f,h)||(d=((e,t,n,o)=>"Unsatisfied version "+n+" from "+(n&&e[t][n].from)+" of shared singleton module "+t+" (required "+r(o)+")")(a,i,h,f),"undefined"!=typeof console&&console.warn&&console.warn(d)),(p=a[i][h]).loaded=1,p.get()}),i={},l={212:()=>a("default","react",!1,[1,19,1,0],()=>u.e(540).then(()=>()=>u(540))),98:()=>a("default","react-dom",!1,[1,19,1,0],()=>u.e(342).then(()=>()=>u(961)))},f={212:[212],328:[98]},s={};u.f.consumes=(e,r)=>{u.o(f,e)&&f[e].forEach(e=>{if(u.o(i,e))return r.push(i[e]);if(!s[e]){var t=r=>{i[e]=0,u.m[e]=t=>{delete u.c[e],t.exports=r()}};s[e]=!0;var n=r=>{delete i[e],u.m[e]=t=>{throw delete u.c[e],r}};try{var o=l[e]();o.then?r.push(i[e]=o.then(t).catch(n)):t(o)}catch(e){n(e)}}})}})(),(()=>{var e={792:0};u.f.j=(r,t)=>{var n=u.o(e,r)?e[r]:void 0;if(0!==n)if(n)t.push(n[2]);else if(212!=r){var o=new Promise((t,o)=>n=e[r]=[t,o]);t.push(n[2]=o);var a=u.p+u.u(r),i=new Error;u.l(a,t=>{if(u.o(e,r)&&(0!==(n=e[r])&&(e[r]=void 0),n)){var o=t&&("load"===t.type?"missing":t.type),a=t&&t.target&&t.target.src;i.message="Loading chunk "+r+" failed.\n("+o+": "+a+")",i.name="ChunkLoadError",i.type=o,i.request=a,n[1](i)}},"chunk-"+r,r)}else e[r]=0};var r=(r,t)=>{var n,o,a=t[0],i=t[1],l=t[2],f=0;if(a.some(r=>0!==e[r])){for(n in i)u.o(i,n)&&(u.m[n]=i[n]);l&&l(u)}for(r&&r(t);f<a.length;f++)o=a[f],u.o(e,o)&&e[o]&&e[o][0](),e[o]=0},t=self.webpackChunkshell_app=self.webpackChunkshell_app||[];t.forEach(r.bind(null,0)),t.push=r.bind(null,t.push.bind(t))})(),u(513)})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/index.tsx":
+/*!***********************!*\
+  !*** ./src/index.tsx ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("{// // src/index.tsx\nPromise.all(/*! import() */[__webpack_require__.e(\"vendors-node_modules_react-dom_client_js\"), __webpack_require__.e(\"webpack_sharing_consume_default_react_react\"), __webpack_require__.e(\"src_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom\")]).then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ \"./src/bootstrap.tsx\"));\n\n//# sourceURL=webpack://shell-app/./src/index.tsx?\n}");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = __webpack_module_cache__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".js";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "shell-app:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/remotes loading */
+/******/ 	(() => {
+/******/ 		var chunkMapping = {};
+/******/ 		var idToExternalAndNameMapping = {};
+/******/ 		__webpack_require__.f.remotes = (chunkId, promises) => {
+/******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
+/******/ 				chunkMapping[chunkId].forEach((id) => {
+/******/ 					var getScope = __webpack_require__.R;
+/******/ 					if(!getScope) getScope = [];
+/******/ 					var data = idToExternalAndNameMapping[id];
+/******/ 					if(getScope.indexOf(data) >= 0) return;
+/******/ 					getScope.push(data);
+/******/ 					if(data.p) return promises.push(data.p);
+/******/ 					var onError = (error) => {
+/******/ 						if(!error) error = new Error("Container missing");
+/******/ 						if(typeof error.message === "string")
+/******/ 							error.message += '\nwhile loading "' + data[1] + '" from ' + data[2];
+/******/ 						__webpack_require__.m[id] = () => {
+/******/ 							throw error;
+/******/ 						}
+/******/ 						data.p = 0;
+/******/ 					};
+/******/ 					var handleFunction = (fn, arg1, arg2, d, next, first) => {
+/******/ 						try {
+/******/ 							var promise = fn(arg1, arg2);
+/******/ 							if(promise && promise.then) {
+/******/ 								var p = promise.then((result) => (next(result, d)), onError);
+/******/ 								if(first) promises.push(data.p = p); else return p;
+/******/ 							} else {
+/******/ 								return next(promise, d, first);
+/******/ 							}
+/******/ 						} catch(error) {
+/******/ 							onError(error);
+/******/ 						}
+/******/ 					}
+/******/ 					var onExternal = (external, _, first) => (external ? handleFunction(__webpack_require__.I, data[0], 0, external, onInitialized, first) : onError());
+/******/ 					var onInitialized = (_, external, first) => (handleFunction(external.get, data[1], getScope, 0, onFactory, first));
+/******/ 					var onFactory = (factory) => {
+/******/ 						data.p = 1;
+/******/ 						__webpack_require__.m[id] = (module) => {
+/******/ 							module.exports = factory();
+/******/ 						}
+/******/ 					};
+/******/ 					handleFunction(__webpack_require__, data[2], 0, 0, onExternal, 1);
+/******/ 				});
+/******/ 			}
+/******/ 		}
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/sharing */
+/******/ 	(() => {
+/******/ 		__webpack_require__.S = {};
+/******/ 		var initPromises = {};
+/******/ 		var initTokens = {};
+/******/ 		__webpack_require__.I = (name, initScope) => {
+/******/ 			if(!initScope) initScope = [];
+/******/ 			// handling circular init calls
+/******/ 			var initToken = initTokens[name];
+/******/ 			if(!initToken) initToken = initTokens[name] = {};
+/******/ 			if(initScope.indexOf(initToken) >= 0) return;
+/******/ 			initScope.push(initToken);
+/******/ 			// only runs once
+/******/ 			if(initPromises[name]) return initPromises[name];
+/******/ 			// creates a new share scope if needed
+/******/ 			if(!__webpack_require__.o(__webpack_require__.S, name)) __webpack_require__.S[name] = {};
+/******/ 			// runs all init snippets from all modules reachable
+/******/ 			var scope = __webpack_require__.S[name];
+/******/ 			var warn = (msg) => {
+/******/ 				if (typeof console !== "undefined" && console.warn) console.warn(msg);
+/******/ 			};
+/******/ 			var uniqueName = "shell-app";
+/******/ 			var register = (name, version, factory, eager) => {
+/******/ 				var versions = scope[name] = scope[name] || {};
+/******/ 				var activeVersion = versions[version];
+/******/ 				if(!activeVersion || (!activeVersion.loaded && (!eager != !activeVersion.eager ? eager : uniqueName > activeVersion.from))) versions[version] = { get: factory, from: uniqueName, eager: !!eager };
+/******/ 			};
+/******/ 			var initExternal = (id) => {
+/******/ 				var handleError = (err) => (warn("Initialization of sharing external failed: " + err));
+/******/ 				try {
+/******/ 					var module = __webpack_require__(id);
+/******/ 					if(!module) return;
+/******/ 					var initFn = (module) => (module && module.init && module.init(__webpack_require__.S[name], initScope))
+/******/ 					if(module.then) return promises.push(module.then(initFn, handleError));
+/******/ 					var initResult = initFn(module);
+/******/ 					if(initResult && initResult.then) return promises.push(initResult['catch'](handleError));
+/******/ 				} catch(err) { handleError(err); }
+/******/ 			}
+/******/ 			var promises = [];
+/******/ 			switch(name) {
+/******/ 				case "default": {
+/******/ 					register("react-dom", "19.1.0", () => (Promise.all([__webpack_require__.e("vendors-node_modules_react-dom_index_js"), __webpack_require__.e("webpack_sharing_consume_default_react_react")]).then(() => (() => (__webpack_require__(/*! ./node_modules/react-dom/index.js */ "./node_modules/react-dom/index.js"))))));
+/******/ 					register("react", "19.1.0", () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! ./node_modules/react/index.js */ "./node_modules/react/index.js"))))));
+/******/ 				}
+/******/ 				break;
+/******/ 			}
+/******/ 			if(!promises.length) return initPromises[name] = 1;
+/******/ 			return initPromises[name] = Promise.all(promises).then(() => (initPromises[name] = 1));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/consumes */
+/******/ 	(() => {
+/******/ 		var parseVersion = (str) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			var p=p=>{return p.split(".").map(p=>{return+p==p?+p:p})},n=/^([^-+]+)?(?:-([^+]+))?(?:\+(.+))?$/.exec(str),r=n[1]?p(n[1]):[];return n[2]&&(r.length++,r.push.apply(r,p(n[2]))),n[3]&&(r.push([]),r.push.apply(r,p(n[3]))),r;
+/******/ 		}
+/******/ 		var versionLt = (a, b) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			a=parseVersion(a),b=parseVersion(b);for(var r=0;;){if(r>=a.length)return r<b.length&&"u"!=(typeof b[r])[0];var e=a[r],n=(typeof e)[0];if(r>=b.length)return"u"==n;var t=b[r],f=(typeof t)[0];if(n!=f)return"o"==n&&"n"==f||("s"==f||"u"==n);if("o"!=n&&"u"!=n&&e!=t)return e<t;r++}
+/******/ 		}
+/******/ 		var rangeToString = (range) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			var r=range[0],n="";if(1===range.length)return"*";if(r+.5){n+=0==r?">=":-1==r?"<":1==r?"^":2==r?"~":r>0?"=":"!=";for(var e=1,a=1;a<range.length;a++){e--,n+="u"==(typeof(t=range[a]))[0]?"-":(e>0?".":"")+(e=2,t)}return n}var g=[];for(a=1;a<range.length;a++){var t=range[a];g.push(0===t?"not("+o()+")":1===t?"("+o()+" || "+o()+")":2===t?g.pop()+" "+g.pop():rangeToString(t))}return o();function o(){return g.pop().replace(/^\((.+)\)$/,"$1")}
+/******/ 		}
+/******/ 		var satisfy = (range, version) => {
+/******/ 			// see webpack/lib/util/semver.js for original code
+/******/ 			if(0 in range){version=parseVersion(version);var e=range[0],r=e<0;r&&(e=-e-1);for(var n=0,i=1,a=!0;;i++,n++){var f,s,g=i<range.length?(typeof range[i])[0]:"";if(n>=version.length||"o"==(s=(typeof(f=version[n]))[0]))return!a||("u"==g?i>e&&!r:""==g!=r);if("u"==s){if(!a||"u"!=g)return!1}else if(a)if(g==s)if(i<=e){if(f!=range[i])return!1}else{if(r?f>range[i]:f<range[i])return!1;f!=range[i]&&(a=!1)}else if("s"!=g&&"n"!=g){if(r||i<=e)return!1;a=!1,i--}else{if(i<=e||s<g!=r)return!1;a=!1}else"s"!=g&&"n"!=g&&(a=!1,i--)}}var t=[],o=t.pop.bind(t);for(n=1;n<range.length;n++){var u=range[n];t.push(1==u?o()|o():2==u?o()&o():u?satisfy(u,version):!o())}return!!o();
+/******/ 		}
+/******/ 		var exists = (scope, key) => {
+/******/ 			return scope && __webpack_require__.o(scope, key);
+/******/ 		}
+/******/ 		var get = (entry) => {
+/******/ 			entry.loaded = 1;
+/******/ 			return entry.get()
+/******/ 		};
+/******/ 		var eagerOnly = (versions) => {
+/******/ 			return Object.keys(versions).reduce((filtered, version) => {
+/******/ 					if (versions[version].eager) {
+/******/ 						filtered[version] = versions[version];
+/******/ 					}
+/******/ 					return filtered;
+/******/ 			}, {});
+/******/ 		};
+/******/ 		var findLatestVersion = (scope, key, eager) => {
+/******/ 			var versions = eager ? eagerOnly(scope[key]) : scope[key];
+/******/ 			var key = Object.keys(versions).reduce((a, b) => {
+/******/ 				return !a || versionLt(a, b) ? b : a;
+/******/ 			}, 0);
+/******/ 			return key && versions[key];
+/******/ 		};
+/******/ 		var findSatisfyingVersion = (scope, key, requiredVersion, eager) => {
+/******/ 			var versions = eager ? eagerOnly(scope[key]) : scope[key];
+/******/ 			var key = Object.keys(versions).reduce((a, b) => {
+/******/ 				if (!satisfy(requiredVersion, b)) return a;
+/******/ 				return !a || versionLt(a, b) ? b : a;
+/******/ 			}, 0);
+/******/ 			return key && versions[key]
+/******/ 		};
+/******/ 		var findSingletonVersionKey = (scope, key, eager) => {
+/******/ 			var versions = eager ? eagerOnly(scope[key]) : scope[key];
+/******/ 			return Object.keys(versions).reduce((a, b) => {
+/******/ 				return !a || (!versions[a].loaded && versionLt(a, b)) ? b : a;
+/******/ 			}, 0);
+/******/ 		};
+/******/ 		var getInvalidSingletonVersionMessage = (scope, key, version, requiredVersion) => {
+/******/ 			return "Unsatisfied version " + version + " from " + (version && scope[key][version].from) + " of shared singleton module " + key + " (required " + rangeToString(requiredVersion) + ")"
+/******/ 		};
+/******/ 		var getInvalidVersionMessage = (scope, scopeName, key, requiredVersion, eager) => {
+/******/ 			var versions = scope[key];
+/******/ 			return "No satisfying version (" + rangeToString(requiredVersion) + ")" + (eager ? " for eager consumption" : "") + " of shared module " + key + " found in shared scope " + scopeName + ".\n" +
+/******/ 				"Available versions: " + Object.keys(versions).map((key) => {
+/******/ 				return key + " from " + versions[key].from;
+/******/ 			}).join(", ");
+/******/ 		};
+/******/ 		var fail = (msg) => {
+/******/ 			throw new Error(msg);
+/******/ 		}
+/******/ 		var failAsNotExist = (scopeName, key) => {
+/******/ 			return fail("Shared module " + key + " doesn't exist in shared scope " + scopeName);
+/******/ 		}
+/******/ 		var warn = /*#__PURE__*/ (msg) => {
+/******/ 			if (typeof console !== "undefined" && console.warn) console.warn(msg);
+/******/ 		};
+/******/ 		var init = (fn) => (function(scopeName, key, eager, c, d) {
+/******/ 			var promise = __webpack_require__.I(scopeName);
+/******/ 			if (promise && promise.then && !eager) {
+/******/ 				return promise.then(fn.bind(fn, scopeName, __webpack_require__.S[scopeName], key, false, c, d));
+/******/ 			}
+/******/ 			return fn(scopeName, __webpack_require__.S[scopeName], key, eager, c, d);
+/******/ 		});
+/******/ 		
+/******/ 		var useFallback = (scopeName, key, fallback) => {
+/******/ 			return fallback ? fallback() : failAsNotExist(scopeName, key);
+/******/ 		}
+/******/ 		var load = /*#__PURE__*/ init((scopeName, scope, key, eager, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			return get(findLatestVersion(scope, key, eager));
+/******/ 		});
+/******/ 		var loadVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var satisfyingVersion = findSatisfyingVersion(scope, key, requiredVersion, eager);
+/******/ 			if (satisfyingVersion) return get(satisfyingVersion);
+/******/ 			warn(getInvalidVersionMessage(scope, scopeName, key, requiredVersion, eager))
+/******/ 			return get(findLatestVersion(scope, key, eager));
+/******/ 		});
+/******/ 		var loadStrictVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var satisfyingVersion = findSatisfyingVersion(scope, key, requiredVersion, eager);
+/******/ 			if (satisfyingVersion) return get(satisfyingVersion);
+/******/ 			if (fallback) return fallback();
+/******/ 			fail(getInvalidVersionMessage(scope, scopeName, key, requiredVersion, eager));
+/******/ 		});
+/******/ 		var loadSingleton = /*#__PURE__*/ init((scopeName, scope, key, eager, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var version = findSingletonVersionKey(scope, key, eager);
+/******/ 			return get(scope[key][version]);
+/******/ 		});
+/******/ 		var loadSingletonVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var version = findSingletonVersionKey(scope, key, eager);
+/******/ 			if (!satisfy(requiredVersion, version)) {
+/******/ 				warn(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
+/******/ 			}
+/******/ 			return get(scope[key][version]);
+/******/ 		});
+/******/ 		var loadStrictSingletonVersion = /*#__PURE__*/ init((scopeName, scope, key, eager, requiredVersion, fallback) => {
+/******/ 			if (!exists(scope, key)) return useFallback(scopeName, key, fallback);
+/******/ 			var version = findSingletonVersionKey(scope, key, eager);
+/******/ 			if (!satisfy(requiredVersion, version)) {
+/******/ 				fail(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
+/******/ 			}
+/******/ 			return get(scope[key][version]);
+/******/ 		});
+/******/ 		var installedModules = {};
+/******/ 		var moduleToHandlerMapping = {
+/******/ 			"webpack/sharing/consume/default/react/react": () => (loadSingletonVersion("default", "react", false, [1,19,1,0], () => (__webpack_require__.e("vendors-node_modules_react_index_js").then(() => (() => (__webpack_require__(/*! react */ "./node_modules/react/index.js"))))))),
+/******/ 			"webpack/sharing/consume/default/react-dom/react-dom": () => (loadSingletonVersion("default", "react-dom", false, [1,19,1,0], () => (__webpack_require__.e("vendors-node_modules_react-dom_index_js").then(() => (() => (__webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js")))))))
+/******/ 		};
+/******/ 		// no consumes in initial chunks
+/******/ 		var chunkMapping = {
+/******/ 			"webpack_sharing_consume_default_react_react": [
+/******/ 				"webpack/sharing/consume/default/react/react"
+/******/ 			],
+/******/ 			"src_bootstrap_tsx-webpack_sharing_consume_default_react-dom_react-dom": [
+/******/ 				"webpack/sharing/consume/default/react-dom/react-dom"
+/******/ 			]
+/******/ 		};
+/******/ 		var startedInstallModules = {};
+/******/ 		__webpack_require__.f.consumes = (chunkId, promises) => {
+/******/ 			if(__webpack_require__.o(chunkMapping, chunkId)) {
+/******/ 				chunkMapping[chunkId].forEach((id) => {
+/******/ 					if(__webpack_require__.o(installedModules, id)) return promises.push(installedModules[id]);
+/******/ 					if(!startedInstallModules[id]) {
+/******/ 					var onFactory = (factory) => {
+/******/ 						installedModules[id] = 0;
+/******/ 						__webpack_require__.m[id] = (module) => {
+/******/ 							delete __webpack_require__.c[id];
+/******/ 							module.exports = factory();
+/******/ 						}
+/******/ 					};
+/******/ 					startedInstallModules[id] = true;
+/******/ 					var onError = (error) => {
+/******/ 						delete installedModules[id];
+/******/ 						__webpack_require__.m[id] = (module) => {
+/******/ 							delete __webpack_require__.c[id];
+/******/ 							throw error;
+/******/ 						}
+/******/ 					};
+/******/ 					try {
+/******/ 						var promise = moduleToHandlerMapping[id]();
+/******/ 						if(promise.then) {
+/******/ 							promises.push(installedModules[id] = promise.then(onFactory)['catch'](onError));
+/******/ 						} else onFactory(promise);
+/******/ 					} catch(e) { onError(e); }
+/******/ 					}
+/******/ 				});
+/******/ 			}
+/******/ 		}
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"main": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if("webpack_sharing_consume_default_react_react" != chunkId) {
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var chunkIds = data[0];
+/******/ 			var moreModules = data[1];
+/******/ 			var runtime = data[2];
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 		
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkshell_app"] = self["webpackChunkshell_app"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// module cache are used so entry inlining is disabled
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.tsx");
+/******/ 	
+/******/ })()
+;
